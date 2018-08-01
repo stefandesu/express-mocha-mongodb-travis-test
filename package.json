@@ -1,0 +1,19 @@
+{
+  "name": "express-mocha-mongodb-travis-test",
+  "version": "0.0.0",
+  "description": "Trying out Node.js testing with Mocha when using Travis CI.",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stefandesu/express-mocha-mongodb-travis-test.git"
+  },
+  "author": "Stefan Peters",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/stefandesu/express-mocha-mongodb-travis-test/issues"
+  },
+  "homepage": "https://github.com/stefandesu/express-mocha-mongodb-travis-test#readme"
+}
