@@ -4,7 +4,7 @@
   "description": "Trying out Node.js testing with Mocha when using Travis CI.",
   "main": "server.js",
   "scripts": {
-    "test": "mocha --exit"
+    "test": "NODE_ENV=test mocha --exit"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,8 @@
     "chai-as-promised": "^7.1.1",
     "chai-http": "^4.0.0",
     "eslint": "^5.2.0",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "mocha-eslint": "^4.1.0"
   },
   "dependencies": {
     "body-parser": "^1.18.3",

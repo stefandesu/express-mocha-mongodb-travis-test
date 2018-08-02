@@ -94,7 +94,9 @@ db.then(db => {
     })
 
   app.listen(port, () => {
-    console.log("Express server running on port", port)
+    if (process.env.NODE_ENV != "test") {
+      console.log("Express server running on port", port)
+    }
   })
 })
 
