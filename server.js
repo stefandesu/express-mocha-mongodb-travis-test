@@ -48,6 +48,13 @@ db.then(db => {
         })
       }).catch(next)
     })
+    .delete((req, res, next) => {
+      collection.deleteMany({}).then(() => {
+        res.json({
+          message: "Things successfully deleted."
+        })
+      }).catch(next)
+    })
 
   app.route("/thing/:id")
     .get((req, res, next) => {
@@ -92,5 +99,5 @@ db.then(db => {
 })
 
 module.exports = {
-  db
+  db, app
 }
