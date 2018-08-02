@@ -3,11 +3,12 @@ const chaiAsPromised = require("chai-as-promised")
 chai.use(chaiAsPromised)
 const chaiHttp = require("chai-http")
 chai.use(chaiHttp)
+// eslint-disable-next-line no-unused-vars
 const should = chai.should()
 const server = require("../server")
 
 // Hide UnhandledPromiseRejectionWarning on output
-process.on('unhandledRejection', () => {})
+process.on("unhandledRejection", () => {})
 
 describe("Test", () => {
   it("1 == 1", () => {
@@ -38,7 +39,7 @@ describe("Express Server", () => {
     // Empty database before each test
     chai.request(server.app)
       .del("/thing")
-      .end((err, res) => {
+      .end(() => {
         done()
       })
   })
@@ -58,7 +59,7 @@ describe("Express Server", () => {
       chai.request(server.app)
         .post("/thing")
         .send(thing)
-        .end((err, res) => {
+        .end(() => {
           chai.request(server.app)
             .get("/thing")
             .end((err, res) => {
