@@ -12,7 +12,7 @@ const
   mongoPort = process.env.MONGO_PORT || 27017,
   mongoDb = process.env.MONGO_DB || "express-mocha-mongodb-travis-test",
   mongoUrl = `mongodb://${mongoHost}:${mongoPort}`,
-  mongoOptions = { useNewUrlParser: true }
+  mongoOptions = { useNewUrlParser: true, useUnifiedTopology: true }
 
 // Promise for MongoDB db
 const db = MongoClient.connect(mongoUrl, mongoOptions).then(client => {
@@ -41,7 +41,7 @@ db.then(db => {
     })
     .post((req, res, next) => {
       let thing = req.body
-      collection.insert(thing).then(result => {
+      collection.insertOne(thing).then(result => {
         res.json({
           message: "Book successfully added!",
           thing: result.ops[0]
